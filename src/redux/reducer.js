@@ -23,6 +23,16 @@ const rootReducer = (state = initState, action) => {
                     action.payload
                 ]
             }
+
+            case 'filters/searchFilterChange':
+                return {
+                    ...state,
+                    filters: {
+                        ...state.filters,
+                        // { id: 5, name: 'AAA', completed: 'false', prioriry: 'Medium' }
+                        search: action.payload
+                    }
+                }
         default: return state;
     }
 }
