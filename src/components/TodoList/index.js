@@ -4,14 +4,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addTodo } from '../../redux/actions';
 import {v4 as uuidv4} from 'uuid'
 import { useState } from 'react';
-import {todoListSelector, searchTextSelector} from '../../redux/selectors'
+import {todoListSelector, searchTextSelector, todosRemainingSelector} from '../../redux/selectors'
 
 export default function TodoList() {
   const [todoName, setTodoName] = useState('');
   const [prioriry, setPriority] = useState('Medium');
-  const todoList = useSelector(todoListSelector)
-  const searchText = useSelector(searchTextSelector)
-  console.log({todoList, searchText})
+  // const todoList = useSelector(todoListSelector)
+  const todoList = useSelector(todosRemainingSelector)
+  // const searchText = useSelector(searchTextSelector)
+  // console.log({todoList, searchText})
 
   const dispatch = useDispatch();
   const handleAddButtonClick = () => {
