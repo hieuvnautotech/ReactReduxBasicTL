@@ -9,15 +9,10 @@ const initState = {
 const filtersReducer = (state = initState, action) => {
     console.log({state,action});
     switch (action.type) {
-        
-
             case 'filters/searchFilterChange':
                 return {
-                    ...state,
-                    filters: {
-                        
-                        search: action.payload
-                    }
+                    ...state,                   
+                    search: action.payload,              
                 }
         default: return state;
     }
